@@ -41,7 +41,7 @@ type: Actions
             <span class="cell" style="width: 60%">Description</span>
         </div>
         {% for doc in group.items %}
-            <a href="{{ doc.url }}" class="row">
+            <a href="{{ doc.url | relative_url }}" class="row">
                 <span class="cell"><code>{{ doc.name | escape }}</code></span>
                 <span class="cell">{{ doc.excerpt | markdownify }}</span>
             </a>

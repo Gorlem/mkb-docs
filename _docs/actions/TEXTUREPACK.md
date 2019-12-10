@@ -7,10 +7,10 @@ hidden: true
 changelog:
   - type: Removed
     version: v0.10.4
-    message: "See [RESOURCEPACKS](/docs/actions/resourcepacks)"
+    message: "See action RESOURCEPACKS"
   - type: Deprecated
     version: v0.9.10
-    message: "See [RESOURCEPACK](/docs/actions/resourcepack)"
+    message: "See action RESOURCEPACK"
   - type: Fixed
     version: v0.9.4
     message: "Parses variables correctly"

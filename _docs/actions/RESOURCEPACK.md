@@ -7,8 +7,8 @@ hidden: true
 changelog:
   - type: Removed
     version: v0.10.4
-    message: "See [RESOURCEPACKS](/docs/actions/resourcepacks)"
+    message: "See the action RESOURCEPACKS"
   - type: Added
     version: v0.9.10
-    message: "Alias for [TEXTUREPACK](/docs/actions/texturepack)"
+    message: "Alias for the action TEXTUREPACK"
 ---

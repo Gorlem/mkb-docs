@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} // {{ site.description }}</title>
 
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}" />
 </head>
 <body>
     <nav class="navigation">
@@ -21,7 +21,7 @@
         <h1 class="navigation__brand">{{ page.title | escape }} {% if tagline %}<small>// {{ tagline }}</small>{% endif %}</h1>
         <div class="navigation__links">
             {% for link in site.data.navigation %}
-                <a href="{{link.url}}">{{link.title}}</a>
+                <a href="{{ link.url | relative_url }}">{{link.title}}</a>
             {% endfor %}
         </div>
     </nav>

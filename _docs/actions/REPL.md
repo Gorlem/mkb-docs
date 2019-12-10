@@ -10,4 +10,4 @@ changelog:
 ---
 Access the REPL interface.
 
-[Commands for the REPL have their own page](/docs/commands)
+[Commands for the REPL have their own page]({{ site.baseurl }}{% link _docs/commands.md %})

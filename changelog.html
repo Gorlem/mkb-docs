@@ -27,7 +27,7 @@ title: Changelog
                         {% endif %}
                         <li>
                             {{ thing.type }}
-                            <a href="{{ thing.url }}">{{ thing.name | escape }}</a>
+                            <a href="{{ thing.url | relative_url }}">{{ thing.name | escape }}</a>
                             {% if change.message %}
                                 // {{ change.message | markdownify }}
                             {% endif %}

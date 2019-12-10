@@ -19,7 +19,7 @@ related:
 Runs a loop over the specified iterator.
 Needs to be closed with `NEXT`.
 
-The iterator can either be [one of the these](/docs/iterators/) or an array.
+The iterator can either be [one of the these]({{ site.baseurl }}{% link _docs/iterators.md %}) or an array.
 
 The loop can be stopped early by using `BREAK`.
 

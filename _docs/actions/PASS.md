@@ -7,7 +7,7 @@ category: Mod related
 changelog:
   - type: Updated
     version: v0.10.12
-    message: "Can now be used in [onSendChatMessage](/docs/events/onsendchatmessage)"
+    message: "Can now be used in the onSendChatMessage event"
   - type: Added
     version: v0.10.4
 ---

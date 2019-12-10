@@ -7,10 +7,10 @@ category: Mod related
 changelog:
   - type: Fixed
     version: v0.14.4
-    message: "Was not stopping the macro when used in the [onSendChatMessage](/docs/events/onsendchatmessage) event"
+    message: "Was not stopping the macro when used in onSendChatMessage"
   - type: Updated
     version: v0.10.12
-    message: "Can now be used in [onSendChatMessage](/docs/events/onsendchatmessage)"
+    message: "Can now be used in the event onSendChatMessage"
   - type: Added
     version: v0.10.4
 ---

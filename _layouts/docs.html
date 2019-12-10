@@ -47,7 +47,7 @@ layout: default
         <h3>See also</h3>
         <ul>
             {% for link in page.links %}
-                <li><a href="{{ link.url }}">{{ link.title }} ({% include url-domain.html url=link.url %})</a></li>
+                <li><a href="{{ link.url | relative_url }}">{{ link.title }} ({% include url-domain.html url=link.url %})</a></li>
             {% endfor %}
         </ul>
     {% endif %}
@@ -80,7 +80,7 @@ layout: default
             </div>
             {% for item in page.related %}
                 {% assign doc = site.docs | where: 'type', item.type | where: 'title', item.name %}
-                <a href="{{ doc.first.url }}" class="row">
+                <a href="{{ doc.first.url | relative_url }}" class="row">
                     <span class="cell"><code>{{ doc.first.name | escape }}</code></span>
                     <span class="cell">{{ doc.first.excerpt | markdownify }}</span>
                 </a>

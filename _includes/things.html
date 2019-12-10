@@ -4,7 +4,7 @@
         <span class="cell" style="width: 60%">Description</span>
     </div>
     {% for item in include.items %}
-        <a href="{{ item.url }}" class="row">
+        <a href="{{ item.url | relative_url }}" class="row">
             <span class="cell"><code>{{ item.name | escape }}</code></span>
             <span class="cell">{{ item.excerpt | markdownify }}</span>
         </a>
