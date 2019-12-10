@@ -16,7 +16,7 @@
 title: Docs for the MKB mod
 description: >- # this means to ignore newlines until "baseurl:"
   Unoffical documentation for the Macro-Keybind-Mod
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/mkb-docs" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  gorlem
 
