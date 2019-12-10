@@ -1,0 +1,23 @@
+﻿$background-color: #ffffff;
+$foreground-color: #000000;
+$background-accent-color: #F44336;
+$foreground-accent-color: #0074D9;
+
+$default-border-width: 3px;
+
+@function primary-text($color)
+{
+    @return change-color($color, $alpha: 0.87);
+}
+
+@function secondary-text($color) {
+    @return change-color($color, $alpha: 0.54);
+}
+
+@function hint-text($color) {
+    @return change-color($color, $alpha: 0.38);
+}
+
+@function divider($color) {
+    @return change-color($color, $alpha: 0.12);
+}

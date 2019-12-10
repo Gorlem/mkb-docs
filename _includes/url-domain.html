@@ -1,0 +1,4 @@
+{% assign cleaned = include.url
+    | replace: "https://", ""
+    | replace: "http://", ""
+    | split: "/" %}{{ cleaned.first}}

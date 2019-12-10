@@ -1,0 +1,29 @@
+[
+    {
+        "type": "Added",
+        "hidden": true
+    },
+    {
+        "type": "Updated",
+        "hidden": true
+    },
+    {
+        "type": "Fixed",
+        "hidden": true
+    },
+    {
+        "type": "Removed",
+        "class": "error",
+        "message": "Attention!"
+    },
+    {
+        "type": "Deprecated",
+        "class": "warning",
+        "message": "Warning!"
+    },
+    {
+        "type": "Note",
+        "class": "info",
+        "message": "Important!"
+    }
+]

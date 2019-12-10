@@ -1,0 +1,26 @@
+﻿.banner {
+    &.warning strong {
+        background: #FF851B;
+        color: primary-text(#fff);
+    }
+
+    &.error strong {
+        background: #FF4136;
+        color: primary-text(#fff);
+    }
+
+    &.info strong {
+        background: #0074D9;
+        color: primary-text(#fff);
+    }
+
+    strong {
+        padding: 0.5em 1em 0.5em 2em;
+        margin: 0 0.5em 0 -2em;
+        border-radius: 0 5px 5px 0;
+    }
+
+    p {
+        display: inline;
+    }
+}

@@ -1,0 +1,50 @@
+---
+layout: default
+type: Actions
+---
+<!-- TODO:
+<form class="section">
+    <input type="search" placeholder="What are you looking for..." name="search" value="" />
+    <label>Up to version:</label>
+    <select name="version" id="version">
+        {% for entry in site.data.versions %}
+            <option>{{ entry.version }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Filter" />
+</form>
+-->
+{% assign groups = site.docs
+    | where: 'layout', 'docs'
+    | where: 'type', page.title
+    | where_exp: 'g', 'g.hidden != true'
+    | group_by: 'category'
+    | sort: 'name' %}
+
+{% if groups.size > 3 %}
+    <div class="section">
+        <span>Categories:</span>
+        {% for category in groups %}
+            {% if category %}
+                <a href="#{{category.name}}">{{ category.name }}</a>
+                {% unless forloop.last %}|{% endunless %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% for group in groups %}
+    <h2 id="{{ group.name }}">{{ group.name }}</h2>
+    <div class="table table--faked">
+        <div class="row row--head">
+            <span class="cell" style="width: 40%">Name</span>
+            <span class="cell" style="width: 60%">Description</span>
+        </div>
+        {% for doc in group.items %}
+            <a href="{{ doc.url }}" class="row">
+                <span class="cell"><code>{{ doc.name | escape }}</code></span>
+                <span class="cell">{{ doc.excerpt | markdownify }}</span>
+            </a>
+        {% endfor %}
+    </div>
+{% endfor %}

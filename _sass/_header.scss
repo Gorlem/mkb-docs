@@ -1,0 +1,32 @@
+﻿@import "definitions";
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.3rem;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 0 1.5em;
+}
+
+.navigation__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+    .navigation__links > a {
+        padding: 0.5em;
+        margin: 0.1em;
+        border-bottom: $default-border-width solid transparent;
+    }
+
+        .navigation__links > a:hover, .navigation__links > a:focus, .navigation__links > a:active, .navigation__links > .active {
+            border-color: inherit;
+        }
+
+small {
+    font-weight: normal;
+}

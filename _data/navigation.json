@@ -1,0 +1,26 @@
+[
+    {
+        "url": "/docs/actions",
+        "title": "Actions"
+    },
+    {
+        "url": "/docs/variables",
+        "title": "Variables"
+    },
+    {
+        "url": "/docs/events",
+        "title": "Events"
+    },
+    {
+        "url": "/docs/iterators",
+        "title": "Iterators"
+    },
+    {
+        "url": "/docs/parameters",
+        "title": "Parameters"
+    },
+    {
+        "url": "/docs/commands",
+        "title": "REPL"
+    }
+]

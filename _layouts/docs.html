@@ -1,0 +1,90 @@
+---
+layout: default
+---
+{% for banner in site.data.banner %}
+    {% if banner.hidden %}
+        {% continue %}
+    {% endif %}
+
+    {% assign entries = page.changelog | where: 'type', banner.type %}
+    {% if entries.last %}
+        {% assign entry = entries.last %}
+        <div class="banner {{banner.class}}">
+            <strong>{{ banner.message }}</strong>
+            {{ entry.type }}
+            {% if entry.version %}
+                in {% include version.html version=entry.version %}
+            {% endif %}
+            {% if entry.message %}
+                // {{ entry.message | markdownify }}
+            {% endif %}
+        </div>
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+<div>
+    <h2><code>{{ page.name | escape }}</code></h2>
+    <dl class="pair-description">
+        {% if page.category %}
+            <dt>Category</dt>
+            <dd>{{ page.category }}</dd>
+        {% endif %}
+        {% assign added = page.changelog | where: 'type', 'Added' %}
+        {% if added.last and added.last.version %}
+            <dt>Added in</dt>
+            <dd>{% include version.html version=added.last.version %}</dd>
+        {% endif %}
+        {% if page.permission %}
+            <dt>Permission</dt>
+            <dd><code>{{ page.permission }}</code></dd>
+        {% endif %}
+    </dl>
+    
+    {{ content }}
+
+    {% if page.links %}
+        <h3>See also</h3>
+        <ul>
+            {% for link in page.links %}
+                <li><a href="{{ link.url }}">{{ link.title }} ({% include url-domain.html url=link.url %})</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if page.changelog and page.changelog.size > 1 %}
+        <h3><a href="{% link changelog.html %}">Changelog</a></h3>
+        <ul>
+            {% for entry in page.changelog %}
+                <li>
+                    {{ entry.type }}
+
+                    {% if entry.version %}
+                        in {% include version.html version=entry.version %}
+                    {% endif %}
+
+                    {% if entry.message %}
+                        // {{ entry.message | markdownify }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if page.related %}
+        <h3>Related</h3>
+        <div class="table table--faked">
+            <div class="row row--head">
+                <span class="cell" style="width: 40%">Name</span>
+                <span class="cell" style="width: 60%">Description</span>
+            </div>
+            {% for item in page.related %}
+                {% assign doc = site.docs | where: 'type', item.type | where: 'title', item.name %}
+                <a href="{{ doc.first.url }}" class="row">
+                    <span class="cell"><code>{{ doc.first.name | escape }}</code></span>
+                    <span class="cell">{{ doc.first.excerpt | markdownify }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

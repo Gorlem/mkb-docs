@@ -1,0 +1,35 @@
+﻿@import "definitions";
+
+input {
+    background: none;
+    padding: 0.2em 0.5em;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+
+    &[type="submit"], &[type="button"] {
+        color: primary-text($foreground-accent-color);
+        text-decoration: none;
+        border-bottom: $default-border-width solid transparent;
+        cursor: pointer;
+
+        &:hover, &:focus, &:active {
+            color: secondary-text($foreground-accent-color);
+            border-color: inherit;
+        }
+    }
+
+    &[type="search"], &[type="text"] {
+        border-bottom: $default-border-width solid divider($foreground-color);
+        width: 25em;
+    }
+}
+
+select {
+    background: none;
+    padding: 0.2em 0 0.2em 0.5em;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    border-bottom: $default-border-width solid divider($foreground-color);
+}

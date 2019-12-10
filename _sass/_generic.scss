@@ -1,0 +1,42 @@
+﻿@import "definitions";
+
+html {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 0 2rem;
+    background: $background-color;
+    color: primary-text($foreground-color);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a:not([class]) {
+    color: primary-text($foreground-accent-color);
+    text-decoration: none;
+    border-bottom: $default-border-width solid transparent;
+
+    &:hover, &:focus, &:active {
+        color: secondary-text($foreground-accent-color);
+        border-color: inherit;
+        text-decoration: none;
+    }
+}
+
+
+main {
+    padding: 0 2em;
+}
+
+.section {
+    margin: 0.5em;
+}
+
+.table p, li p {
+    display: inline;
+}

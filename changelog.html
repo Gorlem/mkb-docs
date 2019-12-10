@@ -1,0 +1,43 @@
+---
+layout: default
+title: Changelog
+---
+
+{% for entry in site.data.versions %}
+    <h2 id="{{ entry.version }}">
+        {% if entry.url %}<a href="{{ entry.url }}">{% endif %}
+        Version {{ entry.version }}
+        {% if entry.url %}</a>{% endif %}
+        <small>// Minecraft {{ entry.minecraft }}
+        {% if entry.api %}(API version {{ entry.api }}){% endif %}
+        </small>
+    </h2>
+    {% assign changes = "" | split: "" %}
+    {% assign things = site.docs | group_by: "type" %}
+    {% for changeType in site.data.banner %}
+        {% assign first = true %}
+        {% for group in things %}
+            {% for thing in group.items %}
+                {% for change in thing.changelog %}
+                    {% if change.version == entry.version and change.type == changeType.type %}
+                        {% if first %}
+                            {{ changeType.type }}
+                            <ul>
+                            {% assign first = false %}
+                        {% endif %}
+                        <li>
+                            {{ thing.type }}
+                            <a href="{{ thing.url }}">{{ thing.name | escape }}</a>
+                            {% if change.message %}
+                                // {{ change.message | markdownify }}
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+        {% unless first %}
+            </ul>
+        {% endunless %}
+    {% endfor %}
+{% endfor %}
